@@ -1,0 +1,16 @@
+{
+  "name": "gameworkshop",
+  "version": "1.0.0",
+  "description": "gameworkshop app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongoose": "*"
+  },
+  "author": "Teodor Atanasov",
+  "license": "ISC"
+}
