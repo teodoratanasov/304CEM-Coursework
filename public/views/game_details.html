@@ -1,0 +1,22 @@
+<a class="btn btn-primary" href="#!/">Back</a>
+
+<div class="card" ng-init="getGame()">
+    <div class="card-heading">
+        <h3 class="card-header">{{game.title}}</h3>
+    </div>
+    <div class="card-group">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{game.image_url}}">
+            </div>
+            <div class="col-md-12">
+                </p>{{game.description}}</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Genre: {{game.genre}}</li>
+                    <li class="list-group-item">Creator: {{game.creator}}</li>
+                </ul>
+                <a href="{{game.download_url}}" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+    </div>
+</div>
