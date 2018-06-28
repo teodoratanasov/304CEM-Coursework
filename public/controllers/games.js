@@ -15,5 +15,11 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
             $scope.game = response.data;
         });
     }
+
+    $scope.addGame = function(){
+        $http.post("/api/games/", $scope.game).then(function(response){
+            window.location.assign('#/games/add')
+        });
+    }
 }]);
 
