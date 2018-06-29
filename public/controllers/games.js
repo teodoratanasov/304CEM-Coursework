@@ -17,8 +17,9 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
     }
 
     $scope.addGame = function(){
-        $http.post("/api/games/", $scope.game).then(function(response){
-            window.location.assign('#/games/add')
+        console.log($scope.game);
+            $http.post("/api/games/", $scope.game).then(function(response){
+            window.location.assign('#/games/add');
         });
     }
 }]);
