@@ -22,5 +22,18 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
             window.location.assign('#/games/add');
         });
     }
+
+    $scope.updateGame = function(){
+            var id = $routeParams.id;
+            $http.put("/api/games/"+id, $scope.game).then(function(response){
+            window.location.assign('#/games');
+        });
+    }
+
+    $scope.removeGame = function(id){
+            $http.delete("/api/games/"+id).then(function(response){
+            window.location.assign('#/games');
+        });
+    }
 }]);
 
