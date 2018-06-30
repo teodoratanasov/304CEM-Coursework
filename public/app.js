@@ -21,7 +21,10 @@ myApp.config(function($routeProvider){
         controller:'GamesController',
         templateUrl:'views/edit_game.html'
     })
-    .otherwise({
-        redirectTo: '/'
-    });
+    
+    .when('/games/register',{
+        controller:'GamesController',
+        templateUrl:'views/register.html'
+    })
+    
 });
