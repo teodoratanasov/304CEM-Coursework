@@ -1,3 +1,5 @@
+//Controller for the different pages
+//Creating the app object 
 var myApp = angular.module('myApp',['ngRoute']);
 
 myApp.config(function($routeProvider){

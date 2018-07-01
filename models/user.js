@@ -23,7 +23,7 @@ module.exports.addUser = function(user, callback){
 module.exports.getUser = function(callback,limit){
 	User.find(callback).limit(limit);
 }
-
+//Get User by ID
 module.exports.getUserById = function(id, callback, limit){
 	User.findById(id, callback);
 }

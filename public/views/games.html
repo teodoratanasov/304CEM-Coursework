@@ -1,9 +1,12 @@
+<!--Page for all of the Games--> 
+
 <div class="card" ng-init="getGames()">
     <div class="card-heading">
         <h3 class="card-header">Latest Games</h3>
     </div>
     <div class="card-group">
         <div class="row">
+            <!--Display the Games in a array by looping through them Angular function --> 
             <div ng-repeat="game in games">
                     <div class="col-md-12">
                         <div class="col-md-12">
@@ -11,6 +14,7 @@
                         </div>
                         <div class="card-block col-md-12">
                             <div class="card-block">
+                                <!--Call functions from the database to display different data --> 
                             <h4 class="card-title">{{game.title}}</h4>
                             <p class="card-text">{{user.username}}</p>
                             <p class="card-text">{{game.description}}</p>

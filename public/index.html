@@ -1,3 +1,5 @@
+<!--Main Page -->  
+
 <html ng-app="myApp">
 <head>
 	<title>Gamestore</title>
@@ -20,9 +22,8 @@
         <a class="nav-link" href="#!/games/add">Add Game</a> 
           <a class="btn btn-outline-primary" href="#!/games/register">Sign up</a>
       </div>
-      <p class="navbar-right navbar-text" ng-show="getUserByUsername">Singed in as {{username}}</p>
     </nav>
-
+<!--Display cards --> 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -31,7 +32,7 @@
             </div>
         </div>
     </div>
-    
+<!--Using the different modules Angular, Bootstrap, Jquery --> 
 	<script src="/bower_components/jquery/dist/jquery.js"></script>
 	<script src="/bower_components/angular/angular.js"></script>
 	<script src="/bower_components/angular-route/angular-route.js"></script>

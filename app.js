@@ -12,7 +12,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 
-
+//Static Folder 
 app.use(express.static(__dirname+'/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -71,6 +71,7 @@ app.get('/', function(req, res){
     res.send('Please use 1/api/games');
 });
 
+//Get Genres information
 app.get('/api/genres', function(req, res){
     Genre.getGenres(function(err, genres){
         if(err){
@@ -80,6 +81,7 @@ app.get('/api/genres', function(req, res){
     });
 });
 
+//Post to Genres
 app.post('/api/genres', function(req, res){
     var genre = req.body;
     Genre.addGenre(genre, function(err, genre){
@@ -90,6 +92,7 @@ app.post('/api/genres', function(req, res){
     });
 });
 
+//Update Genres by ID
 app.put('/api/genres/:_id', function(req, res){
     var id = req.params._id;
     var genre = req.body;
@@ -101,6 +104,7 @@ app.put('/api/genres/:_id', function(req, res){
     });
 });
 
+//Delete Genres by ID
 app.delete('/api/genres/:_id', function(req, res){
     var id = req.params._id;
     var genre = req.body;
@@ -112,7 +116,7 @@ app.delete('/api/genres/:_id', function(req, res){
     });
 });
 
-
+//Get Api for the Games
 app.get('/api/games', function(req, res){
     Game.getGames(function(err, games){
         if(err){
@@ -122,6 +126,7 @@ app.get('/api/games', function(req, res){
     });
 });
 
+//Get API for individual Game
 app.get('/api/games/:_id', function(req, res){
     Game.getGameById(req.params._id, function(err, game){
         if(err){
@@ -131,6 +136,7 @@ app.get('/api/games/:_id', function(req, res){
     });
 });
 
+//Post a Game
 app.post('/api/games', function(req, res){
     var game = req.body;
     Game.addGame(game, function(err, game){
@@ -141,6 +147,7 @@ app.post('/api/games', function(req, res){
     });
 });
 
+//Update Api for individual Game
 app.put('/api/games/:_id', function(req, res){
     var id = req.params._id;
     var game = req.body;
@@ -152,6 +159,7 @@ app.put('/api/games/:_id', function(req, res){
     });
 });
 
+//Delete a Game
 app.delete('/api/games/:_id', function(req, res){
     var id = req.params._id;
     var game = req.body;
@@ -163,6 +171,7 @@ app.delete('/api/games/:_id', function(req, res){
     });
 });
 
+//Get Api for Users
 app.get('/api/users', function(req, res){
     User.getUser(function(err, users){
         if(err){
@@ -172,6 +181,7 @@ app.get('/api/users', function(req, res){
     });
 });
 
+//Add Api for Users
 app.post('/api/users', function(req, res){
     var user = req.body;
     User.addUser(user, function(err, users){
@@ -182,6 +192,7 @@ app.post('/api/users', function(req, res){
     });
 });
 
+//Delete a User
 app.delete('/api/users/:_id', function(req, res){
     var id = req.params._id;
     var user = req.body;
@@ -193,5 +204,6 @@ app.delete('/api/users/:_id', function(req, res){
     });
 });
 
+//App is running on PORT 3000
 app.listen(3000);
 console.log('Running on port 3000...');
