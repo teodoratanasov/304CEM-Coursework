@@ -163,8 +163,8 @@ app.delete('/api/games/:_id', function(req, res){
     });
 });
 
-app.get('/api/register', function(req, res){
-    Register.getUsers(function(err, users){
+app.get('/api/users', function(req, res){
+    User.getUser(function(err, users){
         if(err){
             throw err;
         }
@@ -172,12 +172,24 @@ app.get('/api/register', function(req, res){
     });
 });
 
-app.post('/api/register', function(req, res){
-    Register.addUsers(function(err, users){
+app.post('/api/users', function(req, res){
+    var user = req.body;
+    User.addUser(user, function(err, users){
         if(err){
             throw err;
         }
-        res.json(users);
+        res.json(user);
+    });
+});
+
+app.delete('/api/users/:_id', function(req, res){
+    var id = req.params._id;
+    var user = req.body;
+    User.removeUser(id, user, {}, function(err, user){
+        if(err){
+            throw err;
+        }
+        res.json(user);
     });
 });
 

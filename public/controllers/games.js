@@ -36,15 +36,15 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
         });
     }
 
-    $scope.getUsers = function(){
-        $http.get("/api/games/users").then(function(response){
+    $scope.getUser = function(){
+        $http.get("/api/users/").then(function(response){
             $scope.users = response.data;
         });
     }
 
     $scope.addUser = function(){
         console.log($scope.user);
-            $http.post("/api/games/users", $scope.user).then(function(response){
+            $http.post("/api/users/", $scope.user).then(function(response){
             window.location.assign('#/games');
         });
     }

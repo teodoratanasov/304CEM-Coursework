@@ -1,46 +1,35 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
 
 // User Schema
 var UserSchema = mongoose.Schema({
 	username: {
 		type: String,
-		index:true
+		required: true
 	},
 	password: {
-		type: String
-	},
-	email: {
-		type: String
-	},
-	name: {
-		type: String
+		type: String,
+		required: true
 	}
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);
 
-module.exports.createUser = function(newUser, callback){
-	bcrypt.genSalt(10, function(err, salt) {
-	    bcrypt.hash(newUser.password, salt, function(err, hash) {
-	        newUser.password = hash;
-	        newUser.save(callback);
-	    });
-	});
+//Add User
+module.exports.addUser = function(user, callback){
+	User.create(user, callback);
 }
 
-module.exports.getUserByUsername = function(username, callback){
-	var query = {username: username};
-	User.findOne(query, callback);
+//Get User
+module.exports.getUser = function(callback,limit){
+	User.find(callback).limit(limit);
 }
 
-module.exports.getUserById = function(id, callback){
+module.exports.getUserById = function(id, callback, limit){
 	User.findById(id, callback);
 }
 
-module.exports.comparePassword = function(candidatePassword, hash, callback){
-	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
-    	if(err) throw err;
-    	callback(null, isMatch);
-	});
+// Delete User
+module.exports.removeUser = function(id, callback){
+    var query = {_id: id};
+    User.remove(query,callback);
 }
