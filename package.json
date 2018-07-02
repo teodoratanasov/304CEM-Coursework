@@ -26,6 +26,8 @@
   "author": "Teodor Atanasov",
   "license": "ISC",
   "devDependencies": {
+    "jasmine": "^3.1.0",
+    "jasmine-console-reporter": "^3.0.2",
     "ws": "3.3.2"
   }
 }

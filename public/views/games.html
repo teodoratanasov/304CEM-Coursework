@@ -11,14 +11,17 @@
                     <div class="col-md-12">
                         <div class="col-md-12">
                             <img ng-src="{{game.image_url}}" class="img-thumbnail">
+                            
                         </div>
                         <div class="card-block col-md-12">
                             <div class="card-block">
+                            <a class="btn btn-primary" href="#!/games/details/{{game._id}}">View Details</a>
                                 <!--Call functions from the database to display different data --> 
+                                
                             <h4 class="card-title">{{game.title}}</h4>
                             <p class="card-text">{{user.username}}</p>
                             <p class="card-text">{{game.description}}</p>
-                            <a class="btn btn-primary" href="#!/games/details/{{game._id}}">View Details</a>
+
                             </div>
                         </div>
                     </div>

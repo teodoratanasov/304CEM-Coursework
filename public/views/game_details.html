@@ -13,18 +13,17 @@
                 <img src="{{game.image_url}}">
             </div>
             <div class="col-md-12">
+                <a href="{{game.download_url}}" class="btn btn-primary float-bottom">Download</a>
                 </p>{{game.description}}</p>
                 <ul class="list-group">
                     <li class="list-group-item">Genre: {{game.genre}}</li>
                     <li class="list-group-item">Creator: {{game.creator}}</li>
                 </ul>
-                <a href="{{game.download_url}}" class="btn btn-primary">Download</a>
+                <!--Redirecting to Edit Form or Delete function --> 
+                <a class="btn btn-warning" href="#!/games/edit/{{game._id}}">Edit</a> ｜ <a class="btn btn-danger" href="#!/games"  ng-click="removeGame(game._id)">Delete</a>
+                
             </div>
         </div>
     </div>
 </div>
 
-<div class"float-right">
-    <!--Redirecting to Edit Form or Delete function --> 
-    <a href="#!/games/edit/{{game._id}}">Edit</a> ｜ <a href="#" ng-click="removeGame(game._id)">Delete</a>
-</div>
